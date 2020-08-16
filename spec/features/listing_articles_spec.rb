@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Listing Articles' do
+RSpec.feature 'Listing articles' do
   before do
     @article1 = Article.create(title: 'The first article', body: 'Body of 1st article')
     @article2 = Article.create(title: 'The second article', body: 'Body of 2nd article')
