@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'Deleting an Article' do
   before do
-    @article = Article.create(title: 'Article Title', body: 'Body of article')
+    @john = User.create!(email: 'john@example.com', password: 'password')
+    login_as(@john)
+    @article = Article.create(title: 'Article Title', body: 'Body of article', user: @john)
   end
 
   scenario 'A user deletes an article' do
@@ -14,5 +16,4 @@ RSpec.feature 'Deleting an Article' do
     expect(page).to have_content('Article has been deleted')
     expect(current_path).to eq(root_path)
   end
-
 end
