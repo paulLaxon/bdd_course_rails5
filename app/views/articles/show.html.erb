@@ -20,7 +20,7 @@
 </article>  
 <hr>
 <div class="col-md-12">
-  <%= form_for [@article, @comment], remote: true,
+  <%= form_for [@article, @comment], remote: true, # uses ajax
       :html => {class: "form-horizontal", role: "form"} do |f| %>
     <% if @comment.errors.any? %>
       <div class='panel panel-danger col-md-offset-1'>
